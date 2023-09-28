@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Loop through all subdirectories in the current directory
+for dir in */; do
+    if [ -d "$dir" ]; then
+        # Add execute permission to owner, group owner, and others
+        chmod +x "$dir"
+    fi
+done
+
