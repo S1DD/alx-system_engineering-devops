@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Configures the ssh to not authenticate using a password
+PasswordAuthenticate no
+IdentityFile ~/.ssh/school
