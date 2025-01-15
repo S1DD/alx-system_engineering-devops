@@ -3,8 +3,8 @@
 
 if [ #$ -lt 4]
 then
-	echo "PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
-	exit;
+	echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+	exit 1;
 fi
 
 path_to_file=$1;
@@ -12,4 +12,4 @@ ip=$2;
 username=$3;
 path_key=$4;
 
-scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i "$path_key" "$path_to_file" "{$username}"@"{ip}":/~
+scp -o StrictHostKeyChecking=no -i "$path_key" "$path_to_file" "{$username}"@"{ip}":/~
